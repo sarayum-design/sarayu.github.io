@@ -1,2442 +1,792 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Description based strictly on provided background -->
-    <meta name="description" content="Portfolio of Sarayu Mandavilli, a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, pursuing a career as a Supply Chain Analyst.">
-    
-    <title>Sarayu Mandavilli | Business Analytics & Supply Chain Student</title>
-    
-    <!-- Google Fonts for Corporate Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ==========================================================================
-           1. CUSTOM PROPERTIES & COLOR PALETTE (Shades of Blue & White)
-           ========================================================================== */
-        :root {
-            --navy-dark: #0A192F;       /* Deep Imperial Navy */
-            --navy-main: #102A43;       /* Executive Navy Blue */
-            --blue-slate: #243B53;      /* Mid Slate Blue */
-            --blue-royal: #1864AB;      /* Royal Sapphire Accent */
-            --blue-bright: #2B6CB0;     /* Vibrant Blue Accent */
-            --blue-soft: #4299E1;       /* Light Accent Blue */
-            --blue-ice: #EBF8FF;        /* Ice Blue Highlight Background */
-            --bg-light: #F8FAFC;        /* Crisp Off-White/Light Gray */
-            --bg-card: #FFFFFF;         /* Pure White */
-            --text-dark: #0F172A;       /* Primary Dark Text */
-            --text-muted: #475569;      /* Secondary Muted Text */
-            --border-color: #E2E8F0;    /* Subtle Border Gray */
-            --border-blue: #CBD5E1;     /* Blue-tinted Border */
-            
-            --shadow-sm: 0 2px 4px rgba(10, 25, 47, 0.04);
-            --shadow-md: 0 10px 20px -5px rgba(16, 42, 67, 0.08);
-            --shadow-lg: 0 20px 30px -10px rgba(10, 25, 47, 0.12);
-            
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --font-heading: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            --font-body: 'Inter', -apple-system, sans-serif;
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* ==========================================================================
-           2. BASE & RESET STYLES
-           ========================================================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--navy-dark);
-            line-height: 1.25;
-        }
-
-        a {
-            color: var(--blue-royal);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--blue-bright);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Layout Structure */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            padding: 6rem 0;
-        }
-
-        .bg-white {
-            background-color: var(--bg-card);
-        }
-
-        .bg-gradient-blue {
-            background: linear-gradient(180deg, #F0F4F8 0%, var(--bg-light) 100%);
-        }
-
-        /* Section Titles */
-        .section-header {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-subtitle {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--blue-royal);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue-royal), var(--blue-soft));
-            border-radius: 2px;
-        }
-
-        /* Business Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.85rem 1.75rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: var(--radius-sm);
-            transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--navy-main);
-            color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(16, 42, 67, 0.15);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--navy-dark);
-            color: #FFFFFF;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(10, 25, 47, 0.25);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--navy-main);
-            border-color: var(--navy-main);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--blue-ice);
-            color: var(--navy-dark);
-            border-color: var(--navy-dark);
-            transform: translateY(-2px);
-        }
-
-        /* ==========================================================================
-           3. NAVIGATION BAR
-           ========================================================================== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 1.1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--blue-royal);
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .nav-menu ul {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            font-size: 0.925rem;
-            font-weight: 600;
-            color: var(--navy-slate);
-            position: relative;
-            padding: 0.25rem 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--blue-royal);
-            transition: width var(--transition);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: var(--blue-royal);
-        }
-
-        /* Responsive Mobile Hamburger Menu */
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 6px;
-            padding: 4px;
-        }
-
-        .bar {
-            width: 26px;
-            height: 2px;
-            background-color: var(--navy-dark);
-            transition: var(--transition);
-        }
-
-        /* ==========================================================================
-           4. HERO SECTION
-           ========================================================================== */
-        .hero-section {
-            padding: 9.5rem 0 6rem 0;
-            background: linear-gradient(135deg, #0A192F 0%, #102A43 60%, #1864AB 100%);
-            color: #FFFFFF;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Geometric Abstract Overlay for Business Aesthetic */
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(66, 153, 225, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 850px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background-color: rgba(235, 248, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--blue-soft);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-role {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #E2E8F0;
-            margin-bottom: 1.75rem;
-        }
-
-        .hero-bio {
-            font-size: 1.15rem;
-            color: #CBD5E1;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            max-width: 760px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-cta .btn-primary {
-            background-color: #FFFFFF;
-            color: var(--navy-dark);
-        }
-
-        .hero-cta .btn-primary:hover {
-            background-color: var(--blue-ice);
-            color: var(--navy-main);
-        }
-
-        .hero-cta .btn-secondary {
-            color: #FFFFFF;
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .hero-cta .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #FFFFFF;
-            border-color: #FFFFFF;
-        }
-
-        /* ==========================================================================
-           5. ABOUT SECTION
-           ========================================================================== */
-        .about-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            border-left: 5px solid var(--blue-royal);
-            box-shadow: var(--shadow-md);
-        }
-
-        .about-card p {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-            line-height: 1.85;
-            font-weight: 400;
-        }
-
-        /* ==========================================================================
-           6. SKILLS SECTION
-           ========================================================================== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--border-blue);
-        }
-
-        .skill-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--bg-light);
-        }
-
-        .skill-icon-box {
-            width: 42px;
-            height: 42px;
-            background-color: var(--blue-ice);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blue-royal);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .skill-header h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--navy-main);
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .tag {
-            background-color: var(--blue-ice);
-            color: var(--navy-main);
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            border: 1px solid rgba(24, 100, 171, 0.15);
-            transition: var(--transition);
-        }
-
-        .tag:hover {
-            background-color: var(--blue-royal);
-            color: #FFFFFF;
-        }
-
-        /* ==========================================================================
-           7. PROJECTS SECTION
-           ========================================================================== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--blue-royal);
-        }
-
-        .project-card-placeholder {
-            border: 2px dashed var(--border-blue);
-            background-color: rgba(235, 248, 255, 0.3);
-        }
-
-        .project-header-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--blue-royal);
-            margin-bottom: 0.5rem;
-        }
-
-        .project-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            font-size: 0.975rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-            margin-bottom: 1.25rem;
-        }
-
-        .project-role {
-            font-size: 0.9rem;
-            color: var(--navy-main);
-            background-color: var(--bg-light);
-            padding: 0.6rem 0.85rem;
-            border-radius: var(--radius-sm);
-            margin-bottom: 1.25rem;
-            border-left: 3px solid var(--blue-bright);
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .mini-tag {
-            font-size: 0.8rem;
-            font-weight: 600;
-            background-color: var(--bg-light);
-            color: var(--blue-slate);
-            padding: 0.25rem 0.65rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .project-footer-links {
-            padding-top: 1.25rem;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .link-active {
-            font-size: 0.925rem;
-            font-weight: 700;
-            color: var(--blue-royal);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .link-active:hover {
-            color: var(--navy-dark);
-            text-decoration: underline;
-        }
-
-        .link-placeholder {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* ==========================================================================
-           8. EDUCATION SECTION
-           ========================================================================== */
-        .education-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .education-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.25rem;
-        }
-
-        .institution-name {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-        }
-
-        .grad-badge {
-            background-color: var(--navy-main);
-            color: #FFFFFF;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-        }
-
-        .education-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .edu-item-label {
-            font-size: 0.825rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            color: var(--blue-royal);
-            margin-bottom: 0.25rem;
-            display: block;
-        }
-
-        .edu-item-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--navy-dark);
-        }
-
-        /* ==========================================================================
-           9. CAREER INTERESTS SECTION
-           ========================================================================== */
-        .interests-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 2rem;
-        }
-
-        .primary-interest-box {
-            background: linear-gradient(135deg, var(--navy-main) 0%, var(--navy-dark) 100%);
-            color: #FFFFFF;
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .interest-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            color: var(--blue-soft);
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-
-        .primary-interest-box h3 {
-            font-size: 2rem;
-            color: #FFFFFF;
-            font-weight: 800;
-        }
-
-        .related-interests-box {
-            background-color: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .related-interests-box h4 {
-            font-size: 1.15rem;
-            color: var(--navy-main);
-            margin-bottom: 1.25rem;
-            font-weight: 700;
-        }
-
-        .related-tags-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-        }
-
-        .interest-pill {
-            background-color: var(--blue-ice);
-            color: var(--navy-main);
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 0.65rem 1.2rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-blue);
-        }
-
-        /* ==========================================================================
-           10. CONTACT SECTION
-           ========================================================================== */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-
-        .contact-info-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact-cta-heading {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-cta-subtext {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .contact-method-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: var(--bg-card);
-            padding: 1.1rem 1.25rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .contact-icon {
-            width: 44px;
-            height: 44px;
-            background-color: var(--blue-ice);
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blue-royal);
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .contact-detail-text span {
-            display: block;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-        }
-
-        .contact-detail-text a,
-        .contact-detail-text p {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--navy-dark);
-        }
-
-        /* Front-End Form */
-        .form-card {
-            background-color: var(--bg-card);
-            padding: 2.25rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-notice {
-            font-size: 0.825rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            font-style: italic;
-            background-color: var(--bg-light);
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--blue-royal);
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--navy-main);
-            margin-bottom: 0.4rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            font-size: 0.95rem;
-            font-family: var(--font-body);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-sm);
-            background-color: #FFFFFF;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--blue-royal);
-            box-shadow: 0 0 0 3px rgba(24, 100, 171, 0.15);
-        }
-
-        .form-status {
-            margin-top: 1rem;
-            padding: 0.75rem;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: none;
-        }
-
-        .form-status.success {
-            display: block;
-            background-color: #E6FFFA;
-            color: #234E52;
-            border: 1px solid #B2F5EA;
-        }
-
-        /* ==========================================================================
-           11. FOOTER
-           ========================================================================== */
-        .footer {
-            background-color: var(--navy-dark);
-            color: #94A3B8;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-brand {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: #FFFFFF;
-            font-size: 1.1rem;
-        }
-
-        .footer-subtext {
-            font-size: 0.875rem;
-        }
-
-        /* ==========================================================================
-           12. RESPONSIVE BREAKPOINTS
-           ========================================================================== */
-        @media (max-width: 900px) {
-            .interests-wrapper,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-title {
-                font-size: 2.75rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 68px;
-                left: -100%;
-                width: 100%;
-                background-color: var(--bg-card);
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: var(--shadow-md);
-                padding: 2rem 0;
-                transition: var(--transition);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-            }
-
-            .hero-section {
-                padding-top: 8rem;
-            }
-
-            .section {
-                padding: 4rem 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarayu Mandavilli | Portfolio</title>
+  <!-- Google Fonts: Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-color: #faf9f6;          /* Soft Cream Background */
+      --card-bg: #ffffff;           /* Clean White Cards */
+      --text-main: #2b2b2b;         /* Deep Charcoal */
+      --text-muted: #666666;        /* Muted Gray */
+      --accent: #1b3b36;            /* Deep Forest Green */
+      --accent-light: #e8f0ec;      /* Light Sage */
+      --accent-hover: #122824;      /* Darker Forest Green */
+      --border-color: #e5e5e5;      /* Soft Border */
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(250, 249, 246, 0.96);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+      margin-right: 3rem; /* Generous separation from Home link */
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 150px 0 90px;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 650px;
+    }
+
+    .hero-image-wrapper {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-image {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-light);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .hero-image:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-statement {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Section Headers */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 40%;
+      height: 2px;
+      background-color: var(--accent);
+      bottom: -8px;
+      left: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .skill-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-role {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background: var(--bg-color);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .project-links a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .education-card {
+      background: var(--card-bg);
+      padding: 2.2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      max-width: 800px;
+    }
+
+    .school-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .degree-info {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    .edu-meta {
+      display: flex;
+      gap: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .edu-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .career-box {
+      background: var(--card-bg);
+      padding: 2.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .primary-target {
+      margin-bottom: 1.5rem;
+    }
+
+    .primary-target h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .primary-tag {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-light);
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+    }
+
+    .related-targets h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .related-tag {
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      max-width: 800px;
+    }
+
+    .contact-intro {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 2rem;
+    }
+
+    .contact-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      background: var(--bg-color);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      background: var(--card-bg);
+    }
+
+    .contact-item i {
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .contact-item span {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-flex {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .logo {
+        margin-right: 0;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero-title {
+        font-size: 2.6rem;
+      }
+
+      .edu-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Sticky Navigation Header -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <span class="logo-dot"></span> Sarayu Mandavilli
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">Sarayu Mandavilli</a>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-flex">
+        <!-- Text Bio -->
+        <div class="hero-content">
+          <p class="hero-subtitle">BAIT & Supply Chain Student</p>
+          <h1 class="hero-title">Sarayu Mandavilli</h1>
+          <p class="hero-statement">
+            I am a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, with a strong interest in pursuing a career as a Supply Chain Analyst.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Projects</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Headshot Image Container (Replace src with "your-headshot.jpg") -->
+        <div class="hero-image-wrapper">
+          <img 
+            src="Screenshot 2026-04-11 234346.png" 
+            onerror="this.onerror=null; this.src='https://placehold.co/400x400/1b3b36/ffffff?text=Insert+Headshot';"
+            alt="Sarayu Mandavilli" 
+            class="hero-image"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Technical -->
+        <div class="skill-card">
+          <h3><i class="fas fa-laptop-code"></i> Technical</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Microsoft Office</span>
+          </div>
+        </div>
+
+        <!-- Supply Chain & Analytics -->
+        <div class="skill-card">
+          <h3><i class="fas fa-chart-line"></i> Supply Chain & Analytics</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Procure-to-Pay (P2P)</span>
+            <span class="skill-tag">Order-to-Cash (O2C)</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Research</span>
+            <span class="skill-tag">Forecasting</span>
+          </div>
+        </div>
+
+        <!-- Leadership & Operations -->
+        <div class="skill-card">
+          <h3><i class="fas fa-users"></i> Leadership & Operations</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Time Management</span>
+            <span class="skill-tag">Teamwork</span>
+            <span class="skill-tag">Adaptability</span>
+            <span class="skill-tag">Presentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div>
+            <h3 class="project-title">Procure to Pay Workflow</h3>
+            <p class="project-desc">Mapped and visualized the end-to-end Procure-to-Pay (P2P) workflow as part of a NetSuite project during my internship.</p>
+            <p class="project-role"><strong>Role:</strong> Intern / Project Contributor</p>
+            <div class="project-tech">
+              <span class="tech-tag">Procure-to-pay</span>
+              <span class="tech-tag">Canva</span>
+              <span class="tech-tag">Design</span>
+              <span class="tech-tag">Planning</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/13Yt_N2I9krBsrVTcA6GX6WksuDCwepbI/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
-            
-            <!-- Mobile Hamburger Toggle -->
-            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <!-- Navigation Links -->
-            <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#interests" class="nav-link">Interests</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-container">
-                    <span class="hero-badge">Rutgers Business School Honors College</span>
-                    <h1 class="hero-title">Sarayu Mandavilli</h1>
-                    <h2 class="hero-role">BAIT & Supply Chain Student</h2>
-                    <p class="hero-bio">
-                        I am a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, with a strong interest in pursuing a career as a Supply Chain Analyst.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">View My Projects &rarr;</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                    </div>
-                </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div>
+            <h3 class="project-title">Johnson & Johnson Case Competition</h3>
+            <p class="project-desc">Collaborated on a team to analyze a medical market challenge, develop a data-driven business strategy, and present our recommendations as part of the Johnson & Johnson Case Competition.</p>
+            <p class="project-role"><strong>Role:</strong> Team Member / Business Analyst</p>
+            <div class="project-tech">
+              <span class="tech-tag">Healthcare</span>
+              <span class="tech-tag">MedTech</span>
+              <span class="tech-tag">Collaboration</span>
+              <span class="tech-tag">Analysis</span>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section bg-white">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Background</span>
-                    <h2 class="section-title">About Me</h2>
-                </div>
-                <div class="about-card">
-                    <p>
-                        I am a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, with a strong interest in pursuing a career as a Supply Chain Analyst.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section bg-gradient-blue">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Competencies</span>
-                    <h2 class="section-title">Skills</h2>
-                </div>
-                
-                <div class="skills-grid">
-                    <!-- Category 1: Technical -->
-                    <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-box">01</div>
-                            <h3>Technical</h3>
-                        </div>
-                        <div class="tag-list">
-                            <span class="tag">Microsoft Excel</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Microsoft Office</span>
-                        </div>
-                    </div>
-
-                    <!-- Category 2: Supply Chain & Analytics -->
-                    <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-box">02</div>
-                            <h3>Supply Chain & Analytics</h3>
-                        </div>
-                        <div class="tag-list">
-                            <span class="tag">Procure-to-Pay (P2P)</span>
-                            <span class="tag">Order-to-Cash (O2C)</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">Research</span>
-                            <span class="tag">Forecasting</span>
-                        </div>
-                    </div>
-
-                    <!-- Category 3: Leadership & Operations -->
-                    <div class="skill-card">
-                        <div class="skill-header">
-                            <div class="skill-icon-box">03</div>
-                            <h3>Leadership & Operations</h3>
-                        </div>
-                        <div class="tag-list">
-                            <span class="tag">Time Management</span>
-                            <span class="tag">Teamwork</span>
-                            <span class="tag">Adaptability</span>
-                            <span class="tag">Presentation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section bg-white">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Practical Experience</span>
-                    <h2 class="section-title">Projects</h2>
-                </div>
-
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div>
-                            <div class="project-header-badge">Internship Project</div>
-                            <h3 class="project-title">Procure to Pay Workflow</h3>
-                            <p class="project-description">
-                                Mapped and visualized the end-to-end Procure-to-Pay (P2P) workflow as part of a NetSuite project during my internship.
-                            </p>
-                            <div class="project-role">
-                                <strong>Role / Contribution:</strong> Intern / Workflow Mapping & Visualization
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">Procure-to-pay</span>
-                                <span class="mini-tag">Canva</span>
-                                <span class="mini-tag">Design</span>
-                                <span class="mini-tag">Planning</span>
-                            </div>
-                        </div>
-                        <div class="project-footer-links">
-                            <a href="https://drive.google.com/file/d/13Yt_N2I9krBsrVTcA6GX6WksuDCwepbI/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-active">
-                                View Live Demo &rarr;
-                            </a>
-                            <span class="link-placeholder">[GitHub / Code Link Placeholder]</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div>
-                            <div class="project-header-badge">Case Competition</div>
-                            <h3 class="project-title">Johnson & Johnson Case Competition</h3>
-                            <p class="project-description">
-                                Collaborated on a team to analyze a medical market challenge, develop a data-driven business strategy, and present our recommendations as part of the Johnson & Johnson Case Competition.
-                            </p>
-                            <div class="project-role">
-                                <strong>Role / Contribution:</strong> Team Member / Strategy Analyst
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">Healthcare</span>
-                                <span class="mini-tag">MedTech</span>
-                                <span class="mini-tag">Collaboration</span>
-                                <span class="mini-tag">Analysis</span>
-                            </div>
-                        </div>
-                        <div class="project-footer-links">
-                            <a href="https://docs.google.com/presentation/d/193ptJLXH_uQqQbwyurOMlsa6kLCB6MRUlUcOtGOt8Gw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-active">
-                                View Presentation Demo &rarr;
-                            </a>
-                            <span class="link-placeholder">[GitHub / Code Link Placeholder]</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 (Placeholder for future projects) -->
-                    <article class="project-card project-card-placeholder">
-                        <div>
-                            <div class="project-header-badge">Future Project</div>
-                            <h3 class="project-title">[ADD PROJECT HERE]</h3>
-                            <p class="project-description">
-                                [Short project description placeholder. Describe the supply chain or business analytical project here.]
-                            </p>
-                            <div class="project-role">
-                                <strong>Role / Contribution:</strong> [Your Role / Contribution Placeholder]
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">[Skill/Tech 1]</span>
-                                <span class="mini-tag">[Skill/Tech 2]</span>
-                            </div>
-                        </div>
-                        <div class="project-footer-links">
-                            <span class="link-placeholder">[GitHub Link Placeholder]</span>
-                            <span class="link-placeholder">[Live Demo Link Placeholder]</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section bg-gradient-blue">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Academic Credentials</span>
-                    <h2 class="section-title">Education</h2>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-top">
-                        <div>
-                            <h3 class="institution-name">Rutgers Business School Honors College</h3>
-                        </div>
-                        <span class="grad-badge">Graduation Year: 2029</span>
-                    </div>
-
-                    <div class="education-details">
-                        <div>
-                            <span class="edu-item-label">Major / Program</span>
-                            <span class="edu-item-value">Business Analytics & Information Technology and Supply Chain</span>
-                        </div>
-                        <div>
-                            <span class="edu-item-label">Class Standing</span>
-                            <span class="edu-item-value">Sophomore</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Career Interests Section -->
-        <section id="interests" class="section bg-white">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Professional Focus</span>
-                    <h2 class="section-title">Career Interests</h2>
-                </div>
-
-                <div class="interests-wrapper">
-                    <div class="primary-interest-box">
-                        <span class="interest-label">Primary Target Role</span>
-                        <h3>Supply Chain Analyst</h3>
-                    </div>
-
-                    <div class="related-interests-box">
-                        <h4>Related Areas of Focus</h4>
-                        <div class="related-tags-grid">
-                            <span class="interest-pill">Business Analytics</span>
-                            <span class="interest-pill">Supply Chain Management</span>
-                            <span class="interest-pill">Operations</span>
-                            <span class="interest-pill">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section bg-gradient-blue">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-subtitle">Get In Touch</span>
-                    <h2 class="section-title">Contact</h2>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-info-card">
-                        <h3 class="contact-cta-heading">Interested in connecting? Feel free to reach out.</h3>
-                        <p class="contact-cta-subtext">I am always open to discussing supply chain analytics opportunities, business analytics projects, or networking.</p>
-
-                        <div class="contact-methods">
-                            <div class="contact-method-item">
-                                <div class="contact-icon">@</div>
-                                <div class="contact-detail-text">
-                                    <span>Email</span>
-                                    <a href="mailto:ssm274@scarletmail.rutgers.edu">ssm274@scarletmail.rutgers.edu</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-method-item">
-                                <div class="contact-icon">in</div>
-                                <div class="contact-detail-text">
-                                    <span>LinkedIn</span>
-                                    <a href="https://www.linkedin.com/in/sarayumandavilli" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/sarayumandavilli</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-method-item">
-                                <div class="contact-icon">GH</div>
-                                <div class="contact-detail-text">
-                                    <span>GitHub</span>
-                                    <p>[YOUR GITHUB URL]</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-method-item">
-                                <div class="contact-icon">LOC</div>
-                                <div class="contact-detail-text">
-                                    <span>Location</span>
-                                    <p>[OPTIONAL]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Front-End Form -->
-                    <div class="form-card">
-                        <div class="form-notice">
-                            Note: This is a front-end contact demonstration form.
-                        </div>
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary full-width" style="width:100%;">Send Message</button>
-                            <div id="form-status" class="form-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Professional Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div>
-                <div class="footer-brand">Sarayu Mandavilli</div>
-                <div class="footer-subtext">Rutgers Business School Honors College</div>
-            </div>
-            <div class="footer-subtext">
-                &copy; <span id="year"></span> Sarayu Mandavilli. All rights reserved.
-            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://docs.google.com/presentation/d/193ptJLXH_uQqQbwyurOMlsa6kLCB6MRUlUcOtGOt8Gw/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
         </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // Set current year dynamically in footer
-            const yearSpan = document.getElementById("year");
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
-
-            // Mobile Navigation Toggle
-            const hamburger = document.getElementById("hamburger");
-            const navMenu = document.getElementById("nav-menu");
-            const navLinks = document.querySelectorAll(".nav-link");
-
-            if (hamburger && navMenu) {
-                hamburger.addEventListener("click", () => {
-                    hamburger.classList.toggle("active");
-                    navMenu.classList.toggle("active");
-                });
-
-                navLinks.forEach(link => {
-                    link.addEventListener("click", () => {
-                        hamburger.classList.remove("active");
-                        navMenu.classList.remove("active");
-                    });
-                });
-            }
-
-            // Scroll Active Navigation Highlighting
-            const sections = document.querySelectorAll("section[id]");
-
-            function highlightNavOnScroll() {
-                const scrollY = window.pageYOffset;
-
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 120;
-                    const sectionId = current.getAttribute("id");
-
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.add("active");
-                    } else {
-                        document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.remove("active");
-                    Here is the complete, single-file HTML solution incorporating all of your provided information and links, styled with a high-end corporate blue and white design system (deep navy `#0a192f`, royal sapphire `#1e3a8a`, slate blue, and clean white). 
-
-It includes the HTML markup, CSS styling, and Vanilla JavaScript inside a single file for easy setup.
-
-### `index.html`
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarayu Mandavilli is a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, pursuing a career as a Supply Chain Analyst.">
-    <title>Sarayu Mandavilli | Business Analytics & Supply Chain Student</title>
-    
-    <!-- Google Fonts for Modern Typography -->
-    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
-    
-    <style>
-        /* ==========================================================================
-           1. DESIGN SYSTEM & VARIABLES
-           ========================================================================== */
-        :root {
-            /* Corporate Blue Palette */
-            --navy-dark: #0a192f;
-            --navy-primary: #0f2b48;
-            --blue-royal: #1d4ed8;
-            --blue-slate: #2563eb;
-            --blue-light: #3b82f6;
-            --blue-ice: #eff6ff;
-            --blue-soft: #f8fafc;
-            
-            /* Text Colors */
-            --text-heading: #0f172a;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --text-light: #94a3b8;
-            
-            /* UI Elements */
-            --border-color: #e2e8f0;
-            --border-hover: #cbd5e1;
-            --bg-card: #ffffff;
-            
-            /* Shadows & Transitions */
-            --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05);
-            --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-            --shadow-hover: 0 12px 20px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius: 12px;
-        }
-
-        /* ==========================================================================
-           2. BASE RESETS
-           ========================================================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: var(--font-family);
-            color: var(--text-body);
-            background-color: var(--blue-soft);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: var(--blue-royal);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--navy-primary);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section {
-            padding: 6rem 0;
-        }
-
-        .section-white {
-            background-color: #ffffff;
-        }
-
-        .section-title-wrapper {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            letter-spacing: -0.02em;
-            display: inline-block;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 48px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue-royal), var(--blue-light));
-            border-radius: 2px;
-        }
-
-        /* ==========================================================================
-           3. BUTTONS & BADGES
-           ========================================================================== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.85rem 1.75rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--navy-primary);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(15, 43, 72, 0.15);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--blue-royal);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(29, 78, 216, 0.25);
-        }
-
-        .btn-secondary {
-            background-color: #ffffff;
-            color: var(--navy-primary);
-            border-color: var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--navy-primary);
-            background-color: var(--blue-ice);
-            transform: translateY(-2px);
-        }
-
-        /* ==========================================================================
-           4. NAVIGATION BAR
-           ========================================================================== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 1.1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            letter-spacing: -0.02em;
-        }
-
-        .logo span {
-            color: var(--blue-royal);
-        }
-
-        .nav-menu ul {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            font-size: 0.925rem;
-            font-weight: 600;
-            color: var(--text-body);
-            position: relative;
-            padding: 0.25rem 0;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--blue-royal);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: var(--blue-royal);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .bar {
-            width: 22px;
-            height: 2px;
-            background-color: var(--navy-dark);
-            transition: var(--transition);
-        }
-
-        /* ==========================================================================
-           5. HERO SECTION
-           ========================================================================== */
-        .hero-section {
-            padding: 10rem 0 7rem 0;
-            background: linear-gradient(180deg, #ffffff 0%, var(--blue-soft) 100%);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero-container {
-            max-width: 850px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background-color: var(--blue-ice);
-            color: var(--blue-royal);
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 0.35rem 0.85rem;
-            border-radius: 50px;
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.75rem;
-        }
-
-        .hero-role {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--blue-slate);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-bio {
-            font-size: 1.15rem;
-            color: var(--text-body);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            max-width: 750px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* ==========================================================================
-           6. ABOUT SECTION
-           ========================================================================== */
-        .about-card {
-            background-color: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-body);
-            border-left: 5px solid var(--navy-primary);
-        }
-
-        /* ==========================================================================
-           7. SKILLS SECTION
-           ========================================================================== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.75rem;
-        }
-
-        .skill-card {
-            background-color: var(--bg-card);
-            padding: 2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-            transition: var(--transition);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-hover);
-        }
-
-        .skill-card-header h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--blue-ice);
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .tag {
-            background-color: var(--blue-ice);
-            color: var(--navy-primary);
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 0.45rem 0.9rem;
-            border-radius: 6px;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-
-        /* ==========================================================================
-           8. PROJECTS SECTION
-           ========================================================================== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--border-hover);
-        }
-
-        .project-card-placeholder {
-            border: 2px dashed var(--border-color);
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-
-        .project-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 0.85rem;
-        }
-
-        .project-description {
-            font-size: 0.975rem;
-            color: var(--text-body);
-            margin-bottom: 1.25rem;
-            line-height: 1.6;
-        }
-
-        .project-meta {
-            font-size: 0.9rem;
-            color: var(--text-heading);
-            margin-bottom: 1.25rem;
-            background-color: var(--blue-soft);
-            padding: 0.6rem 0.85rem;
-            border-radius: 6px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .mini-tag {
-            font-size: 0.775rem;
-            font-weight: 600;
-            background-color: #f1f5f9;
-            color: var(--text-muted);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        .project-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            padding-top: 1.25rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .btn-link {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--blue-royal);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .btn-link:hover {
-            color: var(--navy-dark);
-        }
-
-        .placeholder-link {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* ==========================================================================
-           9. EDUCATION SECTION
-           ========================================================================== */
-        .education-card {
-            background-color: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .education-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-        }
-
-        .graduation-badge {
-            background-color: var(--navy-primary);
-            color: #ffffff;
-            font-size: 0.85rem;
-            font-weight: 700;
-            padding: 0.4rem 0.9rem;
-            border-radius: 50px;
-        }
-
-        .education-detail {
-            font-size: 1.05rem;
-            color: var(--text-body);
-            margin-bottom: 0.5rem;
-        }
-
-        /* ==========================================================================
-           10. CAREER INTERESTS SECTION
-           ========================================================================== */
-        .interests-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.75rem;
-        }
-
-        .primary-target {
-            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
-            color: #ffffff;
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            box-shadow: var(--shadow-card);
-        }
-
-        .target-label {
-            font-size: 0.825rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--blue-light);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .primary-target h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.01em;
-        }
-
-        .related-interests {
-            background-color: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-        }
-
-        .related-interests h4 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 1.25rem;
-        }
-
-        .interests-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .interest-tag {
-            background-color: var(--blue-soft);
-            color: var(--navy-primary);
-            font-size: 0.925rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        /* ==========================================================================
-           11. CONTACT SECTION
-           ========================================================================== */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-subtext {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-item {
-            font-size: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-item strong {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-item a {
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        .contact-form-container {
-            background-color: var(--bg-card);
-            padding: 2.25rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-        }
-
-        .form-notice {
-            font-size: 0.825rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--navy-dark);
-            margin-bottom: 0.4rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            font-size: 0.95rem;
-            font-family: var(--font-family);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            background-color: #ffffff;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--blue-slate);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-status {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            padding: 0.75rem;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .form-status.success {
-            display: block;
-            background-color: #dcfce7;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-        }
-
-        /* ==========================================================================
-           12. FOOTER
-           ========================================================================== */
-        .footer {
-            background-color: var(--navy-dark);
-            color: #94a3b8;
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.925rem;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer-subtext {
-            font-size: 0.85rem;
-            margin-top: 0.35rem;
-            color: #64748b;
-        }
-
-        /* ==========================================================================
-           13. RESPONSIVE MEDIA QUERIES
-           ========================================================================== */
-        @media (max-width: 850px) {
-            .hero-title {
-                font-size: 2.75rem;
-            }
-
-            .interests-container,
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 65px;
-                left: -100%;
-                width: 100%;
-                background-color: #ffffff;
-                border-bottom: 1px solid var(--border-color);
-                box-shadow: var(--shadow-hover);
-                padding: 2rem 0;
-                transition: left 0.3s ease;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-            }
-
-            .hero-section {
-                padding: 8rem 0 5rem 0;
-            }
-
-            .section {
-                padding: 4rem 0;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Sarayu <span>Mandavilli</span></a>
-            
-            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#education" class="nav-link">Education</a></li>
-                    <li><a href="#interests" class="nav-link">Interests</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-card">
+        <h3 class="school-title">Rutgers Business School Honors College</h3>
+        <p class="degree-info">Business Analytics & Information Technology and Supply Chain</p>
+        <div class="edu-meta">
+          <span><i class="fas fa-user-graduate"></i> Class Standing: Sophomore</span>
+          <span><i class="fas fa-calendar-alt"></i> Expected Graduation: 2029</span>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container hero-container">
-                <span class="hero-badge">Rutgers Business School Honors College</span>
-                <h1 class="hero-title">Sarayu Mandavilli</h1>
-                <h2 class="hero-role">BAIT & Supply Chain Student</h2>
-                <p class="hero-bio">
-                    I am a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, with a strong interest in pursuing a career as a Supply Chain Analyst.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section section-white">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">About Me</h2>
-                </div>
-                <div class="about-card">
-                    <p>
-                        I am a sophomore in the Rutgers Business School Honors College studying Business Analytics & Information Technology and Supply Chain, with a strong interest in pursuing a career as a Supply Chain Analyst.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Skills</h2>
-                </div>
-                <div class="skills-grid">
-                    
-                    <!-- Technical -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <h3>Technical</h3>
-                        </div>
-                        <ul class="tag-list">
-                            <li class="tag">Microsoft Excel</li>
-                            <li class="tag">Python</li>
-                            <li class="tag">Microsoft Office</li>
-                        </ul>
-                    </div>
-
-                    <!-- Supply Chain & Analytics -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <h3>Supply Chain & Analytics</h3>
-                        </div>
-                        <ul class="tag-list">
-                            <li class="tag">Procure-to-Pay (P2P)</li>
-                            <li class="tag">Order-to-Cash (O2C)</li>
-                            <li class="tag">Data Analysis</li>
-                            <li class="tag">Research</li>
-                            <li class="tag">Forecasting</li>
-                        </ul>
-                    </div>
-
-                    <!-- Leadership & Operations -->
-                    <div class="skill-card">
-                        <div class="skill-card-header">
-                            <h3>Leadership & Operations</h3>
-                        </div>
-                        <ul class="tag-list">
-                            <li class="tag">Time Management</li>
-                            <li class="tag">Teamwork</li>
-                            <li class="tag">Adaptability</li>
-                            <li class="tag">Presentation</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section section-white">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Projects</h2>
-                </div>
-                <div class="projects-grid">
-                    
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3 class="project-title">Procure to Pay Workflow</h3>
-                            <p class="project-description">
-                                Mapped and visualized the end-to-end Procure-to-Pay (P2P) workflow as part of a NetSuite project during my internship.
-                            </p>
-                            <div class="project-meta">
-                                <strong>Role / Contribution:</strong> Internship Project
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">Procure-to-pay</span>
-                                <span class="mini-tag">Canva</span>
-                                <span class="mini-tag">Design</span>
-                                <span class="mini-tag">Planning</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="[https://drive.google.com/file/d/13Yt_N2I9krBsrVTcA6GX6WksuDCwepbI/view?usp=sharing](https://drive.google.com/file/d/13Yt_N2I9krBsrVTcA6GX6WksuDCwepbI/view?usp=sharing)" target="_blank" rel="noopener noreferrer" class="btn-link">
-                                View Workflow Document &rarr;
-                            </a>
-                            <span class="placeholder-link">[GitHub / Code Link Placeholder]</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div class="project-content">
-                            <h3 class="project-title">Johnson & Johnson Case Competition</h3>
-                            <p class="project-description">
-                                Collaborated on a team to analyze a medical market challenge, develop a data-driven business strategy, and present our recommendations as part of the Johnson & Johnson Case Competition.
-                            </p>
-                            <div class="project-meta">
-                                <strong>Role / Contribution:</strong> Team Analyst & Presenter
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">Healthcare</span>
-                                <span class="mini-tag">MedTech</span>
-                                <span class="mini-tag">Collaboration</span>
-                                <span class="mini-tag">Analysis</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <a href="[https://docs.google.com/presentation/d/193ptJLXH_uQqQbwyurOMlsa6kLCB6MRUlUcOtGOt8Gw/edit?usp=sharing](https://docs.google.com/presentation/d/193ptJLXH_uQqQbwyurOMlsa6kLCB6MRUlUcOtGOt8Gw/edit?usp=sharing)" target="_blank" rel="noopener noreferrer" class="btn-link">
-                                View Presentation &rarr;
-                            </a>
-                            <span class="placeholder-link">[GitHub / Code Link Placeholder]</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 Placeholder -->
-                    <article class="project-card project-card-placeholder">
-                        <div class="project-content">
-                            <h3 class="project-title">[ADD PROJECT HERE]</h3>
-                            <p class="project-description">
-                                [Short project description placeholder. Outline the business problem analyzed, tools used, or outcomes achieved.]
-                            </p>
-                            <div class="project-meta">
-                                <strong>Role / Contribution:</strong> [Your Contribution]
-                            </div>
-                            <div class="project-tech">
-                                <span class="mini-tag">[Skill/Technology 1]</span>
-                                <span class="mini-tag">[Skill/Technology 2]</span>
-                            </div>
-                        </div>
-                        <div class="project-links">
-                            <span class="placeholder-link">[GitHub Link Placeholder]</span>
-                            <span class="placeholder-link">[Live Demo Placeholder]</span>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Education</h2>
-                </div>
-                <div class="education-card">
-                    <div class="education-header">
-                        <div>
-                            <h3>Rutgers Business School Honors College</h3>
-                            <p style="color: var(--text-muted); margin-top: 0.25rem;">Rutgers University - New Brunswick</p>
-                        </div>
-                        <span class="graduation-badge">Graduation Year: 2029</span>
-                    </div>
-                    <p class="education-detail"><strong>Major / Program:</strong> Business Analytics & Information Technology and Supply Chain</p>
-                    <p class="education-detail"><strong>Class Standing:</strong> Sophomore</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Career Interests Section -->
-        <section id="interests" class="section section-white">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Career Interests</h2>
-                </div>
-                <div class="interests-container">
-                    <div class="primary-target">
-                        <span class="target-label">Primary Target Role</span>
-                        <h3>Supply Chain Analyst</h3>
-                    </div>
-                    <div class="related-interests">
-                        <h4>Related Focus Areas</h4>
-                        <div class="interests-tags">
-                            <span class="interest-tag">Business Analytics</span>
-                            <span class="interest-tag">Supply Chain Management</span>
-                            <span class="interest-tag">Operations</span>
-                            <span class="interest-tag">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-title-wrapper">
-                    <h2 class="section-title">Contact</h2>
-                </div>
-                <div class="contact-wrapper">
-                    <div class="contact-info">
-                        <h3>Interested in connecting? Feel free to reach out.</h3>
-                        <p class="contact-subtext">I am open to discuss opportunities, analytics, and supply chain projects.</p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <strong>Email</strong>
-                                <a href="mailto:ssm274@scarletmail.rutgers.edu">ssm274@scarletmail.rutgers.edu</a>
-                            </div>
-                            <div class="contact-item">
-                                <strong>LinkedIn</strong>
-                                <a href="[https://www.linkedin.com/in/sarayumandavilli](https://www.linkedin.com/in/sarayumandavilli)" target="_blank" rel="noopener noreferrer">[www.linkedin.com/in/sarayumandavilli](https://www.linkedin.com/in/sarayumandavilli)</a>
-                            </div>
-                            <div class="contact-item">
-                                <strong>GitHub</strong>
-                                <span class="placeholder-link">[YOUR GITHUB URL]</span>
-                            </div>
-                            <div class="contact-item">
-                                <strong>Location</strong>
-                                <span class="placeholder-link">[OPTIONAL]</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Front-End Contact Form -->
-                    <div class="contact-form-container">
-                        <p class="form-notice">Front-end contact message interface:</p>
-                        <form id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                            <div id="form-status" class="form-status"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <span id="year"></span> Sarayu Mandavilli. All rights reserved.</p>
-            <p class="footer-subtext">Rutgers Business School Honors College</p>
+  <section id="interests">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Career Interests</h2>
+      </div>
+      <div class="career-box">
+        <div class="primary-target">
+          <h3>Primary Target Role</h3>
+          <span class="primary-tag">Supply Chain Analyst</span>
         </div>
-    </footer>
+        <div class="related-targets">
+          <h3>Related Areas of Interest</h3>
+          <div class="related-tags">
+            <span class="related-tag">Business Analytics</span>
+            <span class="related-tag">Supply Chain Management</span>
+            <span class="related-tag">Operations</span>
+            <span class="related-tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Set current footer year
-            const yearSpan = document.getElementById("year");
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-card">
+        <p class="contact-intro">Interested in connecting? Feel free to reach out.</p>
+        <div class="contact-links-grid">
+          <a href="https://www.linkedin.com/in/sarayumandavilli" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <span>linkedin.com/in/sarayumandavilli</span>
+          </a>
+          <a href="mailto:ssm274@scarletmail.rutgers.edu" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>ssm274@scarletmail.rutgers.edu</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Mobile Navigation Toggle
-            const hamburger = document.getElementById("hamburger");
-            const navMenu = document.getElementById("nav-menu");
-            const navLinks = document.querySelectorAll(".nav-link");
+  <footer>
+    <div class="container">
+      <p>&copy; Sarayu Mandavilli. All rights reserved.</p>
+    </div>
+  </footer>
 
-            if (hamburger && navMenu) {
-                hamburger.addEventListener("click", () => {
-                    navMenu.classList.toggle("active");
-                });
+  <script>
+    // Mobile Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-                navLinks.forEach(link => {
-                    link.addEventListener("click", () => {
-                        navMenu.classList.remove("active");
-                    });
-                });
-            }
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
 
-            // Scroll Active Link State
-            const sections = document.querySelectorAll("section[id]");
-            window.addEventListener("scroll", () => {
-                const scrollY = window.pageYOffset;
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 120;
-                    const sectionId = current.getAttribute("id");
-
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.add("active");
-                    } else {
-                        document.querySelector(`.nav-menu a[href*=${sectionId}]`)?.classList.remove("active");
-                    }
-                });
-            });
-
-            // Contact Form Demo Handler
-            const contactForm = document.getElementById("contact-form");
-            const formStatus = document.getElementById("form-status");
-
-            if (contactForm && formStatus) {
-                contactForm.addEventListener("submit", (e) => {
-                    e.preventDefault();
-                    formStatus.textContent = "Thank you! Your message has been submitted (Front-end demo mode).";
-                    formStatus.className = "form-status success";
-                    contactForm.reset();
-
-                    setTimeout(() => {
-                        formStatus.style.display = "none";
-                    }, 5000);
-                });
-            }
-        });
-    </script>
+    // Close Mobile Menu on Click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
